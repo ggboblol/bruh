@@ -8,6 +8,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
 random.seed(time.localtime)
 
+full_name = ("gg gboblol_")
+first_letter = full_name[0]
+space_index = full_name.find(" ")
+three_letters_surname = full_name[space_index + 1:space_index + 4]
+number = random.randrange (1,999)
+
+
 #Setup Selenium
 path = 'C:\\Users\\Administrator\\Downloads\\bot\\chromedriver.exe'
 chrome_options = webdriver.ChromeOptions()
@@ -27,7 +34,7 @@ birthdayYear.select_by_value("1990")
 #Write to the username field.
 username_field = driver.find_element_by_id("signup-username")
 username_field.clear()
-username_field.send_keys("gaminglkolodr55")
+username_field.send_keys(first_letter, three_letters_surname, number)
 
 #Write to the password field.
 password_field = driver.find_element_by_id("signup-password")
